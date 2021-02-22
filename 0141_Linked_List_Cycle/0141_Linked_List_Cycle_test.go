@@ -42,6 +42,9 @@ func TestHasCycle(t *testing.T) {
 			if got := hasCycle(tt.args.head); got != tt.want {
 				t.Errorf("hasCycle() = %v, want %v", got, tt.want)
 			}
+			if got := hasCycleFloyd(tt.args.head); got != tt.want {
+				t.Errorf("hasCycleFloyd() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }

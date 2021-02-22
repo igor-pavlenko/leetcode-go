@@ -26,3 +26,20 @@ func hasCycle(head *ListNode) bool {
 	}
 	return false
 }
+
+// Floyd's Cycle Finding Algorithm
+func hasCycleFloyd(head *ListNode) bool {
+	if head == nil {
+		return false
+	}
+	s := head
+	f := head.Next
+	for s != f {
+		if f == nil || f.Next == nil {
+			return false
+		}
+		s = s.Next
+		f = f.Next.Next
+	}
+	return true
+}
