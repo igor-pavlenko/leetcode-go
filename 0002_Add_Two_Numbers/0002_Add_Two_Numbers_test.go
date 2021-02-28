@@ -1,18 +1,9 @@
 package leestcode_0002_Add_Two_Numbers
 
 import (
-	"fmt"
+	"leetcode/lib"
 	"testing"
 )
-
-func printList(head *ListNode) string {
-	result := ""
-	for head != nil {
-		result = fmt.Sprintf("%s->%d", result, head.Val)
-		head = head.Next
-	}
-	return result
-}
 
 func TestAddTwoNumbers(t *testing.T) {
 	type args struct {
@@ -93,8 +84,8 @@ func TestAddTwoNumbers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := addTwoNumbers(tt.args.l1, tt.args.l2);
-			gotStr := printList(got)
+			got := addTwoNumbers(tt.args.l1, tt.args.l2)
+			gotStr := lib.PrintList(got)
 			if gotStr != tt.want {
 				t.Errorf("addTwoNumbers() = %s, want %s", gotStr, tt.want)
 			}

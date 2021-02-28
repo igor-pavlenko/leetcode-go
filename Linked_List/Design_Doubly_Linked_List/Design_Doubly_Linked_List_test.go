@@ -2,17 +2,9 @@ package Design_Doubly_Linked_List
 
 import (
 	"fmt"
+	"leetcode/lib"
 	"testing"
 )
-
-func printList(head *Node) string {
-	result := ""
-	for head != nil {
-		result = fmt.Sprintf("%s->%d", result, head.Val)
-		head = head.Next
-	}
-	return result
-}
 
 func TestMyLinked(t *testing.T) {
 	MyList := &MyLinkedList{}
@@ -172,7 +164,7 @@ func TestMyLinked(t *testing.T) {
 				}
 				return
 			}
-			got = printList(MyList.head)
+			got = lib.PrintList(MyList.head)
 			if got != tt.want {
 				t.Errorf("%s %s got = %s, want %v", tt.name, tt.args.action, got, tt.want)
 			}
@@ -230,69 +222,6 @@ func TestMyLinked2(t *testing.T) {
 			},
 			want: "->1->2->7->0",
 		},
-		//{
-		//	name: "Step 5",
-		//	args: args{
-		//		action: "AddAtTail",
-		//		val:    5,
-		//		index:  0,
-		//	},
-		//	want: "->1->2->3->4->5",
-		//},
-		//{
-		//	name: "Step 6",
-		//	args: args{
-		//		action: "AddAtIndex",
-		//		val:    0,
-		//		index:  0,
-		//	},
-		//	want: "->0->1->2->3->4->5",
-		//},
-		//{
-		//	name: "Step 7",
-		//	args: args{
-		//		action: "AddAtIndex",
-		//		val:    6,
-		//		index:  5,
-		//	},
-		//	want: "->0->1->2->3->4->6->5",
-		//},
-		//{
-		//	name: "Step 8",
-		//	args: args{
-		//		action: "AddAtIndex",
-		//		val:    7,
-		//		index:  2,
-		//	},
-		//	want: "->0->1->7->2->3->4->6->5",
-		//},
-		//{
-		//	name: "Step 9",
-		//	args: args{
-		//		action: "DeleteAtIndex",
-		//		val:    0,
-		//		index:  2,
-		//	},
-		//	want: "->0->1->2->3->4->6->5",
-		//},
-		//{
-		//	name: "Step 10",
-		//	args: args{
-		//		action: "DeleteAtIndex",
-		//		val:    0,
-		//		index:  0,
-		//	},
-		//	want: "->1->2->3->4->6->5",
-		//},
-		//{
-		//	name: "Step 11",
-		//	args: args{
-		//		action: "DeleteAtIndex",
-		//		val:    0,
-		//		index:  5,
-		//	},
-		//	want: "->1->2->3->4->6",
-		//},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -313,7 +242,7 @@ func TestMyLinked2(t *testing.T) {
 				}
 				return
 			}
-			got = printList(MyList.head)
+			got = lib.PrintList(MyList.head)
 			if got != tt.want {
 				t.Errorf("%s %s got = %s, want %v", tt.name, tt.args.action, got, tt.want)
 			}
