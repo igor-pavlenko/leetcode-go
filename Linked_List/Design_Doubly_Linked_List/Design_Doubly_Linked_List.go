@@ -1,13 +1,13 @@
 package Design_Doubly_Linked_List
 
-type Node struct {
+type ListNode struct {
 	Val  int
-	Prev *Node
-	Next *Node
+	Prev *ListNode
+	Next *ListNode
 }
 
 type MyLinkedList struct {
-	head *Node
+	head *ListNode
 }
 
 /** Initialize your data structure here. */
@@ -32,7 +32,7 @@ func (this *MyLinkedList) Get(index int) int {
 
 /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
 func (this *MyLinkedList) AddAtHead(val int) {
-	newNode := &Node{
+	newNode := &ListNode{
 		Val:  val,
 		Prev: nil,
 		Next: nil,
@@ -56,7 +56,7 @@ func (this *MyLinkedList) AddAtTail(val int) {
 	for cur.Next != nil {
 		cur = cur.Next
 	}
-	cur.Next = &Node{
+	cur.Next = &ListNode{
 		Val:  val,
 		Prev: cur,
 		Next: nil,
@@ -75,7 +75,7 @@ func (this *MyLinkedList) AddAtIndex(index int, val int) {
 	cur := this.head
 	for i := 0; cur != nil; i++ {
 		if i == index {
-			newNode := &Node{
+			newNode := &ListNode{
 				Val:  val,
 				Prev: cur.Prev,
 				Next: cur,

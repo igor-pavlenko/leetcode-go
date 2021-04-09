@@ -1,12 +1,12 @@
 package Design_Linked_List
 
-type Node struct {
+type ListNode struct {
 	val  int
-	next *Node
+	next *ListNode
 }
 
 type MyLinkedList struct {
-	head *Node
+	head *ListNode
 }
 
 /** Initialize your data structure here. */
@@ -16,7 +16,7 @@ func Constructor() MyLinkedList {
 	}
 }
 
-func (this *MyLinkedList) GetNode(index int) *Node {
+func (this *MyLinkedList) GetNode(index int) *ListNode {
 	if index < 0 {
 		return nil
 	}
@@ -44,7 +44,7 @@ func (this *MyLinkedList) Get(index int) int {
 
 /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
 func (this *MyLinkedList) AddAtHead(val int) {
-	cur := &Node{
+	cur := &ListNode{
 		val:  val,
 		next: this.head,
 	}
@@ -60,7 +60,7 @@ func (this *MyLinkedList) AddAtTail(val int) {
 	if cur == nil {
 		this.AddAtHead(val)
 	} else {
-		cur.next = &Node{
+		cur.next = &ListNode{
 			val:  val,
 			next: nil,
 		}
@@ -80,7 +80,7 @@ func (this *MyLinkedList) AddAtIndex(index int, val int) {
 	if cur == nil {
 		return
 	}
-	cur.next = &Node{
+	cur.next = &ListNode{
 		val:  val,
 		next: cur.next,
 	}

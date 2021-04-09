@@ -17,7 +17,7 @@ func TestMyLinkedListAddAtHead(t *testing.T) {
 		{
 			name: "Example 1",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -27,9 +27,9 @@ func TestMyLinkedListAddAtHead(t *testing.T) {
 		{
 			name: "Example 2",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -68,16 +68,16 @@ func TestMyLinkedListAddAtTail(t *testing.T) {
 		{
 			name: "Example 1",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
 			},
 			args: args{val: 2},
 			want: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -87,9 +87,9 @@ func TestMyLinkedListAddAtTail(t *testing.T) {
 		{
 			name: "Example 2",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -97,11 +97,11 @@ func TestMyLinkedListAddAtTail(t *testing.T) {
 			},
 			args: args{val: 3},
 			want: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
-						next: &Node{
+						next: &ListNode{
 							val:  3,
 							next: nil,
 						},
@@ -116,7 +116,7 @@ func TestMyLinkedListAddAtTail(t *testing.T) {
 			},
 			args: args{val: 4},
 			want: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  4,
 					next: nil,
 				},
@@ -146,7 +146,7 @@ func TestMyLinkedListGet(t *testing.T) {
 		{
 			name: "Example 1",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -157,9 +157,9 @@ func TestMyLinkedListGet(t *testing.T) {
 		{
 			name: "Example 2",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -179,7 +179,7 @@ func TestMyLinkedListGet(t *testing.T) {
 		{
 			name: "Example 4",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -212,7 +212,7 @@ func TestMyLinkedListAddAtIndex(t *testing.T) {
 		{
 			name: "Example 1",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -223,9 +223,9 @@ func TestMyLinkedListAddAtIndex(t *testing.T) {
 		{
 			name: "Example 2",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -237,9 +237,9 @@ func TestMyLinkedListAddAtIndex(t *testing.T) {
 		{
 			name: "Example 3",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -273,7 +273,7 @@ func TestMyLinkedListDeleteAtIndex(t *testing.T) {
 		{
 			name: "Example 1",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -286,9 +286,9 @@ func TestMyLinkedListDeleteAtIndex(t *testing.T) {
 		{
 			name: "Example 2",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
 						next: nil,
 					},
@@ -296,7 +296,7 @@ func TestMyLinkedListDeleteAtIndex(t *testing.T) {
 			},
 			args: args{idx: 1},
 			want: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
 					next: nil,
 				},
@@ -305,11 +305,11 @@ func TestMyLinkedListDeleteAtIndex(t *testing.T) {
 		{
 			name: "Example 3",
 			list: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  2,
-						next: &Node{
+						next: &ListNode{
 							val:  3,
 							next: nil,
 						},
@@ -318,9 +318,9 @@ func TestMyLinkedListDeleteAtIndex(t *testing.T) {
 			},
 			args: args{idx: 1},
 			want: &MyLinkedList{
-				head: &Node{
+				head: &ListNode{
 					val:  1,
-					next: &Node{
+					next: &ListNode{
 						val:  3,
 						next: nil,
 					},
