@@ -10,7 +10,7 @@ func addBinary(a string, b string) string {
 			aInt = 1
 		}
 		bInt = 0
-		if j >= 0 && b[i] == '1' {
+		if j >= 0 && b[j] == '1' {
 			bInt = 1
 		}
 		s := aInt + bInt + carry
